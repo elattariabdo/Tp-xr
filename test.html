@@ -21,12 +21,10 @@ function ligne(nom, ok, aide) {
  document.getElementById('liste').appendChild(li);
 }
 ligne('Connexion sécurisée (HTTPS)', window.isSecureContext, 'obligatoire pour la caméra et les capteurs');
-ligne('Caméra accessible', !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia), 'HTTPS
-requis');
+ligne('Caméra accessible', !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia), 'HTTPS requis');
 ligne('Capteurs de mouvement', 'DeviceOrientationEvent' in window, 'navigateur trop ancien');
 ligne('Vibration', !!navigator.vibrate, 'normal sur iPhone : pas de vibration web');
-ligne('Reconnaissance vocale', !!(window.SpeechRecognition || window.webkitSpeechRecognition), 'Chrome
-(Android) conseillé');
+ligne('Reconnaissance vocale', !!(window.SpeechRecognition || window.webkitSpeechRecognition), 'Chrome (Android) conseillé');
 ligne('WebGL (3D)', !!document.createElement('canvas').getContext('webgl'), 'mettez à jour le navigateur');
 const p = document.createElement('p');
 p.textContent = navigator.userAgent;
